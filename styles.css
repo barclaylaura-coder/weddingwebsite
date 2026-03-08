@@ -626,5 +626,12 @@ input[name="allergy"] {
     }
 }
 
+@media (max-width: 600px) {
+    .navigation ul li {
+        margin: 0 8px; /* Reduces the gap between menu items */
+        font-size: 0.85em; /* Slightly shrinks the text */
+    }
+}
+
 
 /* ... keep all your other existing CSS styles for nav, ul, li, h1, .announce, .saveDate, etc. ... */
