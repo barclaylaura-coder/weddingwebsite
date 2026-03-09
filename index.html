@@ -60,6 +60,7 @@
 
                         <div class="mainTitle">
                             <h1>Ben & Laura</h1>
+                            <img class= "savedateimg" src="https://i.imgur.com/ieaycqM.png">
                         </div>
 
                         <!--
@@ -70,9 +71,11 @@
                         </div>
                         -->
 
+                        <!--
                         <div class="saveDate">
-                            <img src="https://i.imgur.com/YBwmgT5.png" style="width:75vh">
+                            <img class= "savedateimg" src="https://i.imgur.com/YBwmgT5.png">
                         </div>
+                        -->
                     </div>
                 <!--having the sub sections here-->
                 <div id="details-section" class="content-section">
@@ -84,7 +87,7 @@
 
                         <div style="position: relative; display: inline-block;">
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6304.025307011831!2d144.97439219999998!3d-37.8131726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642c65c58d443%3A0xf2a10fa860adae3b!2sOld%20Treasury%20Building!5e0!3m2!1sen!2sau!4v1772693659159!5m2!1sen!2sau" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6304.025307011831!2d144.97439219999998!3d-37.8131726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642c65c58d443%3A0xf2a10fa860adae3b!2sOld%20Treasury%20Building!5e0!3m2!1sen!2sau!4v1772693659159!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
 
                             <img src="https://i.imgur.com/LNYvEal.gif" class="hover-cat"
                                  style="position: absolute; 
@@ -103,7 +106,7 @@
 
                     <div id="gallery-section" class="content-section">
                         <h2>Gallery</h2>
-                        <div class="photo-stack">
+                        <div class="photo-stack" style="height: 100vh;">
                             <img src="https://i.ibb.co/JwQpg6Fv/ph1.png" class="gallery-img ph1">
                             <img src="https://i.ibb.co/60ktGjFW/ph2.png" class="gallery-img ph2">
                             <img src="https://i.ibb.co/XrcnZv8b/ph3.png" class="gallery-img ph3">
@@ -117,16 +120,16 @@
                             <div>
                                 <img class= "corner-cat" src="https://i.imgur.com/6YxBrWV.gif">
                             </div>
-                            <div class="container2" style="height: 72vh; width: 60vh;">
+                            <div class="container2">
                                 <form method="post" action="https://script.google.com/macros/s/AKfycbwAwP-g9Rql1PBzX1_wII1pzNq-3a-2wb5D3eEu7amxGLIpM0MmBjRfmFgFBA5F4p7h/exec" name="rsvp-form">
 
                                     <div class="inline-div-block">
                                         <p>Full Name/ 全名</p>
-                                        <input type="text" name="your-name" style="width:58vh;">
+                                        <input class="box" type="text" name="your-name">
                                     </div>
                                     <div class="inline-div-block">
                                         <p>Phone Number/ 電話號碼</p>
-                                        <input type="text" name="your-number" style="width:42vh;">
+                                        <input class="box" type="text" name="your-number">
                                     </div>
 
                                     <br>
@@ -141,17 +144,17 @@
                                     <br><br>
 
                                     <p>Number of guests/ 賓客人數</p>
-                                        <select id="guests" name="guest-number" style="width:25vh;">
+                                        <select id="guests" name="guest-number">
                                           <option value="1">1</option>
                                           <option value="2">2</option>
                                         </select>
 
                                     <p>Do you have any dietary requirements or allergies?/  你有冇任何飲食需要或者過敏？</p>
-                                    <input type="text" name="allergy" style="width:58vh;">
+                                    <input class="box" type="text" name="allergy">
 
                                     <br><br>
 
-                                    <input type="submit" value="Submit RSVP" id="submit">
+                                    <input class="box" type="submit" value="Submit RSVP" id="submit">
 
                                 </form> 
                             </div> 
