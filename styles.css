@@ -1,6 +1,6 @@
 /* --- NEW STYLES FOR INTRO ANIMATION --- */
 body {
-    overflow: hidden; /* Hide scrollbars during the animation */
+    /*overflow: hidden;  Hide scrollbars during the animation */
     /* Updated background properties */
     background-image: url("https://i.imgur.com/0kCHDcX.png");
     background-size: cover; /* Ensures the image covers the entire screen */
@@ -8,10 +8,17 @@ body {
     background-attachment: fixed; /* Keeps the background static while scrolling */
     background-repeat: no-repeat;
 
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+.main-wrapper {
+    overflow: hidden; /* Keeps your intro animation scrollbars hidden */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 100%;
+    min-height: 100vh; /* Ensures the wrapper takes up the full screen height */
 }
 
 nav {
@@ -23,6 +30,7 @@ nav {
     padding-top: 6%;
 
     /* ⭐ NEW STICKY PROPERTIES ⭐ */
+    position: -webkit-sticky; /* ADD THIS LINE FOR IOS/SAFARI */
     position: sticky;
     top: 0; /* Sticks the element 0 pixels from the top of the viewport */
     z-index: 999; /* Ensures the nav bar stays above all other content */

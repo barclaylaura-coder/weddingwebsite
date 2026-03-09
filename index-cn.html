@@ -16,148 +16,149 @@
     </head>
 
     <body>
-        
-        <div class="clouds-screen" id="cloudsScreen">
-            <img 
-                id="cloud-image" 
-                src="https://i.imgur.com/UAk00tF.png" 
-                alt="Cloud Screen" 
-                data-gif-src="https://i.imgur.com/FcCkxAS.gif"
-            >
-        </div>
-        
-        <div class="initial" id="initialClick">
-            <img src="https://i.ibb.co/t5KckPd/initial2.png">
-        </div>
-        
-        <div class="page-content" id="home-section">
-                    
-                    <div id="translator">
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                                <span class="slider round"></span>
-                        </label>
-                        
-                        <a href="index.html" class="language-link" title="切換至英文 (Switch to English)"></a>
+        <div class="main-wrapper">
+            <div class="clouds-screen" id="cloudsScreen">
+                <img 
+                    id="cloud-image" 
+                    src="https://i.imgur.com/UAk00tF.png" 
+                    alt="Cloud Screen" 
+                    data-gif-src="https://i.imgur.com/FcCkxAS.gif"
+                >
+            </div>
+
+            <div class="initial" id="initialClick">
+                <img src="https://i.ibb.co/t5KckPd/initial2.png">
+            </div>
+
+            <div class="page-content" id="home-section">
+
+                        <div id="translator">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                            </label>
+
+                            <a href="index.html" class="language-link" title="切換至英文 (Switch to English)"></a>
+                        </div>
+
+                <nav class="navigation">
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="#home-section">主頁</a></li>
+                            <li><a href="#details-section">婚禮詳情</a></li>
+                            <li><a href="#gallery-section">相簿</a></li>
+                            <li><a href="#rsvp-section">會否出席</a></li>
+                        </ul> 
                     </div>
-                    
-            <nav class="navigation">
-                <div class="navbar">
-                    <ul>
-                        <li><a href="#home-section">主頁</a></li>
-                        <li><a href="#details-section">婚禮詳情</a></li>
-                        <li><a href="#gallery-section">相簿</a></li>
-                        <li><a href="#rsvp-section">會否出席</a></li>
-                    </ul> 
-                </div>
-            </nav>
-            
-            <div class="container">
-                <div class="content">
-                    <div id="go-home-page" style="height: 100vh;">
-                        
-                        <div class="cats">
-                            <img src="https://i.imgur.com/k4ehPMm.gif">
+                </nav>
+
+                <div class="container">
+                    <div class="content">
+                        <div id="go-home-page" style="height: 100vh;">
+
+                            <div class="cats">
+                                <img src="https://i.imgur.com/k4ehPMm.gif">
+                            </div>
+
+                            <div class="mainTitle">
+                                <h1>Ben & Laura</h1>
+                                <img class= "savedateimg" src="https://i.imgur.com/UuqA631.png">
+                            </div>
+
                         </div>
+                    <!--having the sub sections here-->
+                    <div id="details-section" class="content-section">
+                        <h2 class="hk_h2">婚禮詳情</h2>
+                        <!--Wedding details-->
+                        <div class="deets" style="height: 100vh;">
+                            <p>婚禮將於以下地點舉行：<br>
+                                <b>舊國庫大樓 (Old Treasury Building)<br>
+                                地址：20 Spring St, East Melbourne VIC 3002</b>
+                            </p>
 
-                        <div class="mainTitle">
-                            <h1>Ben & Laura</h1>
-                            <img class= "savedateimg" src="https://i.imgur.com/UuqA631.png">
-                        </div>
+                            <div style="position: relative; display: inline-block;">
 
-                    </div>
-                <!--having the sub sections here-->
-                <div id="details-section" class="content-section">
-                    <h2 class="hk_h2">婚禮詳情</h2>
-                    <!--Wedding details-->
-                    <div class="deets" style="height: 100vh;">
-                        <p>婚禮將於以下地點舉行：<br>
-                            <b>舊國庫大樓 (Old Treasury Building)<br>
-                            地址：20 Spring St, East Melbourne VIC 3002</b>
-                        </p>
+                                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6304.025307011831!2d144.97439219999998!3d-37.8131726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642c65c58d443%3A0xf2a10fa860adae3b!2sOld%20Treasury%20Building!5e0!3m2!1sen!2sau!4v1772693659159!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
 
-                        <div style="position: relative; display: inline-block;">
+                                <img src="https://i.imgur.com/LNYvEal.gif" class="hover-cat"
+                                     style="position: absolute; 
+                                            bottom: 40px;  /* Distance from bottom of MAP */
+                                            left: -30px;   /* Distance from left of MAP (negative overlaps the edge) */
+                                            width: 115px; 
+                                            height: auto; 
+                                            z-index: 10;">
+                            </div>
 
-                            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6304.025307011831!2d144.97439219999998!3d-37.8131726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642c65c58d443%3A0xf2a10fa860adae3b!2sOld%20Treasury%20Building!5e0!3m2!1sen!2sau!4v1772693659159!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
-
-                            <img src="https://i.imgur.com/LNYvEal.gif" class="hover-cat"
-                                 style="position: absolute; 
-                                        bottom: 40px;  /* Distance from bottom of MAP */
-                                        left: -30px;   /* Distance from left of MAP (negative overlaps the edge) */
-                                        width: 115px; 
-                                        height: auto; 
-                                        z-index: 10;">
-                        </div>
-
-                            <p><br>服裝要求 | <b>商務休閒 / 正式</b></p>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 時間 | <b>下午 1:45 - 2:30</b></p><br>
-                            <p><b>更多詳情</b><br>如有任何查詢，請聯絡 Ben 或 Laura。</p>
-                    </div> 
-                </div>
-
-                    <div id="gallery-section" class="content-section">
-                        <h2 class="hk_h2">相簿</h2> 
-                        <!--Gallery-->
-                        <div class="photo-stack" style="height: 100vh;">
-                            <img src="https://i.ibb.co/JwQpg6Fv/ph1.png" class="gallery-img ph1">
-                            <img src="https://i.ibb.co/60ktGjFW/ph2.png" class="gallery-img ph2">
-                            <img src="https://i.ibb.co/XrcnZv8b/ph3.png" class="gallery-img ph3">
+                                <p><br>服裝要求 | <b>商務休閒 / 正式</b></p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 時間 | <b>下午 1:45 - 2:30</b></p><br>
+                                <p><b>更多詳情</b><br>如有任何查詢，請聯絡 Ben 或 Laura。</p>
                         </div> 
                     </div>
 
-                    <div id="rsvp-section" class="content-section">
-                        <h2 class="hk_h2">會否出席</h2>
-                        <!--RSVP-->
-                        <div class="rsvp-wrapper">
-                            <div>
-                                <img class= "corner-cat" src="https://i.imgur.com/6YxBrWV.gif">
-                            </div>
-                            <div class="container2">
-                                <form method="post" action="https://script.google.com/macros/s/AKfycbwAwP-g9Rql1PBzX1_wII1pzNq-3a-2wb5D3eEu7amxGLIpM0MmBjRfmFgFBA5F4p7h/exec" name="rsvp-form">
-
-                                    <div class="inline-div-block">
-                                        <p>Full Name/ 全名</p>
-                                        <input class="box" type="text" name="your-name">
-                                    </div>
-                                    <div class="inline-div-block">
-                                        <p>Phone Number/ 電話號碼</p>
-                                        <input class="box" type="text" name="your-number">
-                                    </div>
-
-                                    <br>
-
-                                    <p>Will you be attending?/  您會不會參加？</p>
-                                        <input type="radio" id="yes" name="attendance-yes" value="yes">
-                                        <label for="html">Yes/ 會</label>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="radio" id="no" name="attendance-no" value="no">
-                                        <label for="css">No/ 不會</label>
-
-                                    <br><br>
-
-                                    <p>Number of guests/ 賓客人數</p>
-                                        <select id="guests" name="guest-number">
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                        </select>
-
-                                    <p>Do you have any dietary requirements or allergies?/  你有冇任何飲食需要或者過敏？</p>
-                                    <input class="box" type="text" name="allergy">
-
-                                    <br><br>
-
-                                    <input class="box" type="submit" value="Submit RSVP" id="submit">
-
-                                </form> 
+                        <div id="gallery-section" class="content-section">
+                            <h2 class="hk_h2">相簿</h2> 
+                            <!--Gallery-->
+                            <div class="photo-stack" style="height: 100vh;">
+                                <img src="https://i.ibb.co/JwQpg6Fv/ph1.png" class="gallery-img ph1">
+                                <img src="https://i.ibb.co/60ktGjFW/ph2.png" class="gallery-img ph2">
+                                <img src="https://i.ibb.co/XrcnZv8b/ph3.png" class="gallery-img ph3">
                             </div> 
                         </div>
+
+                        <div id="rsvp-section" class="content-section">
+                            <h2 class="hk_h2">會否出席</h2>
+                            <!--RSVP-->
+                            <div class="rsvp-wrapper">
+                                <div>
+                                    <img class= "corner-cat" src="https://i.imgur.com/6YxBrWV.gif">
+                                </div>
+                                <div class="container2">
+                                    <form method="post" action="https://script.google.com/macros/s/AKfycbwAwP-g9Rql1PBzX1_wII1pzNq-3a-2wb5D3eEu7amxGLIpM0MmBjRfmFgFBA5F4p7h/exec" name="rsvp-form">
+
+                                        <div class="inline-div-block">
+                                            <p>Full Name/ 全名</p>
+                                            <input class="box" type="text" name="your-name">
+                                        </div>
+                                        <div class="inline-div-block">
+                                            <p>Phone Number/ 電話號碼</p>
+                                            <input class="box" type="text" name="your-number">
+                                        </div>
+
+                                        <br>
+
+                                        <p>Will you be attending?/  您會不會參加？</p>
+                                            <input type="radio" id="yes" name="attendance-yes" value="yes">
+                                            <label for="html">Yes/ 會</label>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" id="no" name="attendance-no" value="no">
+                                            <label for="css">No/ 不會</label>
+
+                                        <br><br>
+
+                                        <p>Number of guests/ 賓客人數</p>
+                                            <select id="guests" name="guest-number">
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                            </select>
+
+                                        <p>Do you have any dietary requirements or allergies?/  你有冇任何飲食需要或者過敏？</p>
+                                        <input class="box" type="text" name="allergy">
+
+                                        <br><br>
+
+                                        <input class="box" type="submit" value="Submit RSVP" id="submit">
+
+                                    </form> 
+                                </div> 
+                            </div>
+                        </div>
+                    <!--sub sections ends here-->
                     </div>
-                <!--sub sections ends here-->
                 </div>
             </div>
-        </div>
-        
 
-    <script src="gsheet.js"></script>   
+
+        <script src="gsheet.js"></script>   
+        </div>
     </body>
 </html>
