@@ -1,6 +1,7 @@
 /* --- NEW STYLES FOR INTRO ANIMATION --- */
 body {
     /*overflow: hidden;  Hide scrollbars during the animation */
+    overflow: hidden;
     /* Updated background properties */
     background-image: url("https://i.imgur.com/0kCHDcX.png");
     background-size: cover; /* Ensures the image covers the entire screen */
@@ -8,18 +9,19 @@ body {
     background-attachment: fixed; /* Keeps the background static while scrolling */
     background-repeat: no-repeat;
 
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
+    height: auto;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 }
 
-.main-wrapper {
+/*.main-wrapper {
     overflow: hidden; /* Keeps your intro animation scrollbars hidden */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    width: 100%;
-    min-height: 100vh; /* Ensures the wrapper takes up the full screen height */
-}
+    /*overflow-x: hidden;  Prevents horizontal scrolling */
+    /*width: 100%;*/
+    /*min-height: 100vh;  Ensures the wrapper takes up the full screen height */
+/*}*/
 
 nav {
     display: flex;
@@ -176,6 +178,23 @@ p {
 }
 
 @media ( max-width: 430px ){
+    html, body {
+        /* Mobile browsers sometimes need the overflow to be 'visible' 
+           on the root to allow sticky to latch onto the viewport scroll */
+        overflow-x: visible !important; 
+        position: relative;
+    }
+    
+    .main-wrapper {
+        overflow-x: clip; /* A modern alternative to hidden that often doesn't break sticky */
+    }
+    
+    nav {
+        /* Force a specific height on mobile to ensure the browser registers the bar */
+        height: auto;
+        min-height: 15px; 
+    }
+    
     .photo-stack {
         /* This ensures the stack doesn't get too tall on mobile */
         aspect-ratio: 1 / 1.4; 
