@@ -41,6 +41,14 @@ nav {
     background-color: #ffe; /* Use your page background color */
     padding: 15px 0; /* Add reasonable padding top/bottom instead of the 6% */
 }
+/* Change color when the mouse is actively pressing the link */
+/* This turns the background pink while the user is actively pressing the item */
+li:active {
+    background-color: rgb(255, 197, 221, 0.5);
+    border-radius: 5px; /* Optional: adds rounded corners */
+    padding: 5px 13px; /* Adds breathing room for the pink background */
+    transition: background-color 0.1s;
+}
 
 ul {
     display: flex; /* Makes the list items flex items */
@@ -178,21 +186,18 @@ p {
 }
 
 @media ( max-width: 430px ){
-    html, body {
-        /* Mobile browsers sometimes need the overflow to be 'visible' 
-           on the root to allow sticky to latch onto the viewport scroll */
-        overflow-x: visible !important; 
-        position: relative;
+    .initial img{
+        padding-right: 17px;
     }
     
-    .main-wrapper {
-        overflow-x: clip; /* A modern alternative to hidden that often doesn't break sticky */
+    .content-section {
+        margin-top:-13px;
     }
-    
     nav {
         /* Force a specific height on mobile to ensure the browser registers the bar */
         height: auto;
         min-height: 15px; 
+        position: sticky;
     }
     
     .photo-stack {
