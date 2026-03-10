@@ -47,7 +47,7 @@
                             <li><a href="#home-section">主頁</a></li>
                             <li><a href="#details-section">婚禮詳情</a></li>
                             <li><a href="#gallery-section">相簿</a></li>
-                            <li><a href="#rsvp-section">會否出席</a></li>
+                            <li><a href="#rsvp-section">RSVP</a></li>
                         </ul> 
                     </div>
                 </nav>
@@ -106,7 +106,7 @@
                         </div>
 
                         <div id="rsvp-section" class="content-section">
-                            <h2 class="hk_h2">會否出席</h2>
+                            <h2 class="hk_h2">RSVP</h2>
                             <!--RSVP-->
                             <div class="rsvp-wrapper">
                                 <div>
@@ -114,35 +114,37 @@
                                 </div>
                                 <div class="container2">
                                     <form method="post" action="https://script.google.com/macros/s/AKfycbwAwP-g9Rql1PBzX1_wII1pzNq-3a-2wb5D3eEu7amxGLIpM0MmBjRfmFgFBA5F4p7h/exec" name="rsvp-form">
-
+                                        <i>* Indicates required field/ 標示為必填項目</i>
                                         <div class="inline-div-block">
-                                            <p>Full Name/ 全名</p>
-                                            <input class="box" type="text" name="your-name">
+                                            <p>Full Name/ 全名 *</p>
+                                            <input class="box" type="text" name="your-name" required>
                                         </div>
                                         <div class="inline-div-block">
-                                            <p>Phone Number/ 電話號碼</p>
-                                            <input class="box" type="text" name="your-number">
+                                            <p>Phone Number/ 電話號碼 *</p>
+                                            <input class="box" type="text" name="your-number" required>
                                         </div>
 
-                                        <br>
-
-                                        <p>Will you be attending?/  您會不會參加？</p>
-                                            <input type="radio" id="yes" name="attendance-yes" value="yes">
-                                            <label for="html">Yes/ 會</label>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" id="no" name="attendance-no" value="no">
-                                            <label for="css">No/ 不會</label>
+                                        <p>Will you be attending the ceremony?/ 你會嚟出席婚禮嗎？*</p>
+                                        <input type="radio" id="c-yes" name="attendance_ceremony" value="Yes" required>
+                                        <label for="c-yes">Yes/ 會</label>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <input type="radio" id="c-no" name="attendance_ceremony" value="No">
+                                        <label for="c-no">No/ 不會</label>
 
                                         <br><br>
 
-                                        <p>Number of guests/ 賓客人數</p>
+                                        <p>Number of guest(s) brought/ 人数 *</p>
                                             <select id="guests" name="guest-number">
-                                              <option value="1">1</option>
-                                              <option value="2">2</option>
+                                                <option value="0" selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
                                             </select>
 
-                                        <p>Do you have any dietary requirements or allergies?/  你有冇任何飲食需要或者過敏？</p>
-                                        <input class="box" type="text" name="allergy">
+                                        <div class="inline-div-block" id="guest-name-section">
+                                            <p>Guests' Name(s)/ 賓客姓名 (eg. Rachel Wong, Nelson Lee) </p>
+                                            <br><i>(only if you bring guests/僅在攜帶賓客時填寫) </i>
+                                            <input class="box" type="text" name="guest-name">
+                                        </div>
 
                                         <br><br>
 
@@ -150,6 +152,10 @@
 
                                     </form> 
                                 </div> 
+                                <div class="bottom-cats">
+                                    <img class="cat-flower" src="https://cdn2.cdnstep.com/lpCYKhaupfPQ95GQKr3v/8-1.png">
+                                    <img class= "cat-bee" src="https://cdn2.cdnstep.com/lpCYKhaupfPQ95GQKr3v/18-1.png">
+                                </div>
                             </div>
                         </div>
                     <!--sub sections ends here-->

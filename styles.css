@@ -134,6 +134,10 @@ p {
     cursor: pointer; /* Shows the hand icon so users know they can interact */
 }
 
+#guest-name-section {
+    display: none;
+}
+
 @font-face {
     font-family: "HelloFont"; /* Give it a name you'll use later */
     src: url("fonts/hellofont.ttf") format("truetype");
@@ -265,7 +269,7 @@ h1 {
 }
 
 #rsvp-section {
-    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .announce,
@@ -612,9 +616,22 @@ html {
     width: 120px; /* Adjust size as needed */
 }
 
+.bottom-cats {
+    text-align: center;
+    width: 100%;
+}
+
+.cat-flower, .cat-bee {
+    align-content: center;
+    display:inline-block;
+    width:113px;
+    margin-top: -25px;
+}
+
 /* ======================================================= */
 /* 1. CONTAINER AND FORM STYLING */
 /* ======================================================= */
+
 
 .container2 {
     position: relative;
