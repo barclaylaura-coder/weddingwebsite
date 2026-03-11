@@ -78,3 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 });
+
+window.onscroll = function() {
+    const nav = document.querySelector('.navbar');
+    // If we scroll down more than 10px, add the class
+    if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+};
