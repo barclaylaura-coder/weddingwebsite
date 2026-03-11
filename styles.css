@@ -2,6 +2,8 @@
 body {
     /*overflow: hidden;  Hide scrollbars during the animation */
     overflow: hidden;
+    display: flex;        
+    flex-direction: column; 
     /* Updated background properties */
     background-image: url("https://i.imgur.com/0kCHDcX.png");
     background-size: cover; /* Ensures the image covers the entire screen */
@@ -214,24 +216,24 @@ p {
     }
     
     .gallery-img {
-        width: 80%;
+        width: 55%;
         height: auto;
     }
     
     .ph1 {
         top: 2%;
-        left: -2%;
+        left: 15%;
     }
     
     .ph2 {
         top: 24%; /* Positioned below ph1 */
-        left: 28%;
+        left: 35%;
         z-index: 2;
     }
 
     .ph3 {
         top: 52%; /* Positioned below ph2 */
-        left: 10%;
+        left: 19%;
         z-index: 3;
         transform: none;
     }
@@ -273,7 +275,7 @@ h1 {
 }
 
 #rsvp-section {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .announce,
@@ -307,8 +309,10 @@ h1 {
     border-color: darkred;
     border-width: 2px;
     border-style: hidden;
-    width: 400px;
     margin: 0 auto;
+    
+    width: 90%;          /* Changed from 400px */
+    max-width: 400px;
     /*
     padding-left: 10px;
     padding-right: 10px;
@@ -340,20 +344,24 @@ h1 {
     border-color: darkred;
     border-width: 2px;
     border-style: hidden;
-    width: 62vh;
+
     margin: 0 auto;
+    width: 100%;
+    max-width: 430px; 
+    height: auto;
 }
 
 .maps {
-    width: 400px; 
-    height: 300px; 
     border:0;
+    width: 390px;
+    /*max-width: 450px; */
+    height: 300px;
 }
 
 @media (max-width: 430px) {
     .savedateimg {
         width: 100%;
-        max-width: 420px;
+        max-width: 400px;
     }
     .maps {
         width:100%;
@@ -763,12 +771,6 @@ input[name="allergy"]{
 }
 
 @media (max-width: 430px) {
-    .page-content {
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        left: 0;
-    }
     .navigation ul {
         display: flex;             /* Enables Flexbox */
         justify-content: center;   /* Centers the items horizontally */
@@ -787,7 +789,7 @@ input[name="allergy"]{
         text-align: center;
         
         /* FIX: Define the starting position */
-        top: 1; 
+        top: 50px; 
         left: 0; 
         
         width: 100%;
@@ -805,5 +807,21 @@ input[name="allergy"]{
     /* This class will be added via JavaScript */
     .navbar.scrolled {
         top: 9px; 
+    }
+    
+    .rsvp-wrapper {
+        position: relative;
+        width: 100%;          /* NEW: Ensures it spans nicely */
+        max-width: 375px;     
+        margin: 30px auto 0; /* Centers the whole unit on the screen */
+    }
+    
+    #translator {
+        margin-top: 5px;
+        margin-right: 85px; /* Increase this value (was 5px) to move it left */
+        float: right;
+        position: relative;
+        width: 70px; 
+        height: 34px;
     }
 }
