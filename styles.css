@@ -767,6 +767,7 @@ input[name="allergy"]{
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        left: 0;
     }
     .navigation ul {
         display: flex;             /* Enables Flexbox */
