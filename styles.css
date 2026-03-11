@@ -763,6 +763,11 @@ input[name="allergy"]{
 }
 
 @media (max-width: 430px) {
+    body {
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
     .navigation ul {
         display: flex;             /* Enables Flexbox */
         justify-content: center;   /* Centers the items horizontally */
@@ -776,8 +781,8 @@ input[name="allergy"]{
         margin: 0 2px; /* Reduces the gap between menu items */
         font-size: 14px; /* Slightly shrinks the text */
     }
-.navbar {
-position: fixed;
+    .navbar {
+        position: fixed;
         text-align: center;
         
         /* FIX: Define the starting position */
