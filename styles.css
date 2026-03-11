@@ -832,7 +832,7 @@ form .inline-div-block, label {
         
         /* FIX: Define the starting position */
         top: 50px; 
-        left: 0; 
+        left: -3px; 
         
         width: 100%;
         /* FIX: Ensure padding doesn't make it wider than the screen */
@@ -856,6 +856,10 @@ form .inline-div-block, label {
         width: 100%;          /* NEW: Ensures it spans nicely */
         max-width: 375px;     
         margin: 30px auto 0; /* Centers the whole unit on the screen */
+    }
+    
+    .cats {
+        margin-top: 6px;
     }
     
     /*
