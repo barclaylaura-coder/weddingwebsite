@@ -1,296 +1,309 @@
-/* --- NEW STYLES FOR INTRO ANIMATION --- */
-body {
-    /*overflow: hidden;  Hide scrollbars during the animation */
-    overflow: hidden;
-    display: flex;        
-    flex-direction: column; 
-    /* Updated background properties */
-    background-image: url("https://i.imgur.com/0kCHDcX.png");
-    background-size: cover; /* Ensures the image covers the entire screen */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Keeps the background static while scrolling */
-    background-repeat: no-repeat;
-
-    overflow-x: hidden;
-    height: auto;
-    /*
-    justify-content: center;
-    align-items: center;
-    */
-    margin: 0 auto;
-}
-
-/*.main-wrapper {
-    overflow: hidden; /* Keeps your intro animation scrollbars hidden */
-    /*overflow-x: hidden;  Prevents horizontal scrolling */
-    /*width: 100%;*/
-    /*min-height: 100vh;  Ensures the wrapper takes up the full screen height */
-/*}*/
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Prevents wrapping to the next line */
-    white-space: nowrap; /* Ensures text stays on one line */
-    width: 100%; /* Ensures the nav bar spans the full width */
-    padding-top: 6%;
-
-    /* ⭐ NEW STICKY PROPERTIES ⭐ */
-    position: -webkit-sticky; /* ADD THIS LINE FOR IOS/SAFARI */
-    position: sticky;
-    top: 0; /* Sticks the element 0 pixels from the top of the viewport */
-    z-index: 999; /* Ensures the nav bar stays above all other content */
-
-    /* Add a background color so page content doesn't scroll beneath the text */
-    background-color: #ffe; /* Use your page background color */
-    padding: 9px 0; /* Add reasonable padding top/bottom instead of the 6% */
-}
-/* Change color when the mouse is actively pressing the link */
-/* This turns the background pink while the user is actively pressing the item */
-li:active {
-    background-color: rgb(255, 197, 221, 0.5);
-    border-radius: 5px; /* Optional: adds rounded corners */
-    padding: 5px 13px; /* Adds breathing room for the pink background */
-    transition: background-color 0.1s;
-}
-
-ul {
-    display: flex; /* Makes the list items flex items */
-    list-style: none; /* Removes bullet points */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-}
-
-li {
-    display: inline-block; /* Use inline-block for consistent spacing */
-    margin: 0 2px; /* Provides horizontal spacing between items */
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border: 1px dashed #ffa5b5;
-}
-
-/* NEW: Style the anchor tags inside the list items */
-.navigation a {
-    text-decoration: none; /* Removes the underline */
-    color: #bd4e55; /* Sets the link color */
-    font-family: "Courier New", Courier, monospace; /* Sets the font */
-    /* Add hover effects here if desired */
-    transition: color 0.3s ease;
-}
-
-p {
-    color: #bd4e55; /* Sets the link color */
-    font-family: "Courier New", Courier, monospace;
-}
-
-.deets,
-.photo {
-    padding-left: 6%;
-    padding-right: 6%;
-    align-items: center;
-    text-align-last: center;
-}
-
-.photo-stack {
-    position: relative;
-    width: 100%;
-    max-width: 600px; /* Limits size on large laptop screens */
-    margin: 0 auto;
-    top: -32px;
-
-    /* ⭐ THE FIX: Keep height proportional to width ⭐ */
-    aspect-ratio: 1 / 1.1;
-
-    /* Alternatively, use a fixed height if you prefer */
-    /* height: 550px; */
-}
-
-.gallery-img {
-    position: absolute;
-    width: 65%; /* Slightly larger to look better on mobile */
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Back Left */
-.ph1 {
-    top: 3%;
-    left: 1%;
-    z-index: 1;
-}
-
-/* Middle Right */
-.ph2 {
-    top: 8%;
-    right: -6%;
-    z-index: 2;
-}
-
-/* Front Bottom Center */
-.ph3 {
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%); /* Keeps it centered */
-    z-index: 3;
-}
-
-.hover-cat {
-    /* This makes the enlargement smooth instead of a sudden "snap" */
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer; /* Shows the hand icon so users know they can interact */
-}
-
-#guest-name-section {
-    display: none;
-}
+/* ======================================================= */
+/* 1. BASE & BODY STYLES                                   */
+/* ======================================================= */
 
 @font-face {
-    font-family: "HelloFont"; /* Give it a name you'll use later */
+    font-family: "HelloFont";
     src: url("fonts/hellofont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
-@media (hover: hover) {
-    .gallery-img:hover {
-        z-index: 10; /* Bring whichever photo you hover over to the very front */
-        transform: scale(1.05);
-    }
-
-    /* Fix the hover conflict we discussed earlier */
-    .ph3:hover {
-        transform: translateX(-50%) scale(1.05);
-        z-index: 10;
-    }
-
-    .hover-cat:hover {
-        /* Scale of 1.2 makes it 20% larger. Use 1.1 for a more subtle "enlarge a bit" effect. */
-        transform: scale(1.1);
-    }
-
-    .navigation a:hover {
-        color: #a03c43; /* Slightly darker color on hover */
-    }
+html {
+    scroll-behavior: smooth;
 }
 
-@media (hover: none) {
-    .gallery-img:active {
-        z-index: 10; /* Bring whichever photo you hover over to the very front */
-        transform: scale(1.05);
-    }
-
-    /* Fix the hover conflict we discussed earlier */
-    .ph3:active {
-        transform: translateX(-50%) scale(1.05);
-        z-index: 10;
-    }
-
-    .hover-cat:active {
-        /* Scale of 1.2 makes it 20% larger. Use 1.1 for a more subtle "enlarge a bit" effect. */
-        transform: scale(1.1);
-    }
-
-    .navigation a:active {
-        color: #a03c43; /* Slightly darker color on hover */
-    }
-}
-
-@media ( max-width: 430px ){
-    .initial img{
-        padding-right: 17px;
-    }
-    
-    .content-section {
-        margin-top:-13px;
-    }
-    nav {
-        /* Force a specific height on mobile to ensure the browser registers the bar */
-        height: auto;
-        min-height: 15px; 
-        position: sticky;
-    }
-    
-    .photo-stack {
-        /* This ensures the stack doesn't get too tall on mobile */
-        aspect-ratio: 1 / 1.4; 
-    }
-    
-    .gallery-img {
-        width: 75%;
-        height: auto;
-    }
-    
-    .ph1 {
-        top: 2%;
-        left: 2%;
-    }
-    
-    .ph2 {
-        top: 24%; /* Positioned below ph1 */
-        left: 32%;
-        z-index: 2;
-    }
-
-    .ph3 {
-        top: 52%; /* Positioned below ph2 */
-        left: 9%;
-        z-index: 3;
-        transform: none;
-    }
-/* Resetting Hover/Active transforms to be simple scales */
-    .ph2:hover, .ph2:active,
-    .ph3:hover, .ph3:active {
-        transform: scale(1.05);
-    }
-}
-
-h1 {
-    color: darkgreen;
-    font-family: "Dancing Script", cursive;
-    padding-top: 37px;
+body {
+    margin: 0 auto;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-
-    font-size: 4.25rem;
-    font-weight: 500;
-    line-height: 0.5;
-    margin-top: 0;
+    flex-direction: column;
+    /* Prevent side scrolling but allow vertical scrolling */
+    overflow-x: hidden; 
+    
+    /* Background Properties */
+    background-image: url("https://i.imgur.com/0kCHDcX.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #ffe; /* Fallback color */
 }
 
-.content-section h2 {
-    color: darkgreen;
-    font-family: "Dancing Script", cursive;
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-
-    font-size: 2.25rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-top: 0;
+/* Helper to lock scroll during intro - apply this class to <body> via JS */
+body.locked {
+    overflow: hidden;
 }
 
-#rsvp-section {
-    margin-top: 5px;
+p {
+    color: #bd4e55;
+    font-family: "Courier New", Courier, monospace;
 }
 
-.announce,
-.cats {
-    font-size: medium;
-    color: firebrick;
-    font-family: Courier new;
+/* ======================================================= */
+/* 2. INTRO ANIMATION (CLOUDS & INITIAL)                   */
+/* ======================================================= */
+
+.clouds-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh; /* Dynamic height for mobile browsers */
+    z-index: 2000;  /* Higher than navbar */
+    background-color: #ffe;
+    transition: opacity 0.5s ease-out;
+}
+
+.clouds-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.initial {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    z-index: 2001; /* Above the clouds */
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.3s ease-out;
+}
+
+.initial img {
+    width: 100%;
+    height: auto;
+}
+
+/* Animation Hiding States */
+.clouds-screen.fading,
+.initial.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ======================================================= */
+/* 3. PAGE WRAPPERS & LAYOUT                               */
+/* ======================================================= */
+
+.page-content {
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-content.loaded {
+    opacity: 1;
+}
+
+.container, .container2 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ======================================================= */
+/* 4. NAVIGATION & HEADER                                  */
+/* ======================================================= */
+
+/* ======================================================= */
+/* 4. HEADINGS (Consolidated)                              */
+/* ======================================================= */
+
+/* Group shared styles for both h1 and h2 */
+h1, h2 {
+    color: darkgreen;
+    font-family: "Dancing Script", cursive;
+    display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
     white-space: nowrap;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+/* Unique properties for h1 */
+h1 {
+    padding-top: 37px;
+    font-size: 4.25rem;
+    line-height: 0.5;
+}
+
+/* Unique properties for h2 (Maintains its 2.25rem size) */
+h2, .content-section h2 {
+    padding-top: 50px;
+    font-size: 2.25rem;
+    line-height: 1.2;
+}
+
+/* The exception for Cantonese/HK headers */
+h2.hk_h2 {
+    font-family: "HelloFont", sans-serif;
+    /* Keeps the darkgreen and size from the h2 block above */
+}
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #ffe;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 4px 12px;
+    border: 1px dashed #ffa5b5;
+}
+
+li:active {
+    background-color: rgba(255, 197, 221, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.1s;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #bd4e55;
+    font-family: "Courier New", Courier, monospace;
+    transition: color 0.3s ease;
+}
+
+/* ======================================================= */
+/* 5. TRANSLATOR SWITCH                                    */
+/* ======================================================= */
+
+#translator {
+    align-self: flex-end; /* Move to the right side of the flex column */
+    margin-top: 9px;
+    margin-right: 20px;
+    position: relative;
+    width: 70px;
+    height: 34px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #e974a4;
+    transition: 0.4s;
+    color: white;
+    line-height: 34px;
+    font-family: helvetica;
+    font-size: 14px;
+    border-radius: 34px;
+}
+
+.slider:after {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.slider:before {
+    content: "ENG";
+    position: absolute;
+    right: 8px;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+    content: "粵語";
+    left: 8px;
+    right: auto;
+}
+
+input:checked + .slider:after {
+    transform: translateX(35px);
+}
+
+.language-link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* ======================================================= */
+/* 6. CONTENT SECTIONS (PHOTOS & CATS)                     */
+/* ======================================================= */
+
+.photo-stack {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    top: -32px;
+    aspect-ratio: 1 / 1.1;
+}
+
+.gallery-img {
+    position: absolute;
+    width: 65%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ph1 { top: 3%; left: 1%; z-index: 1; }
+.ph2 { top: 8%; right: -6%; z-index: 2; }
+.ph3 { 
+    bottom: 20%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 3; 
+}
+
+.hover-cat {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .cats img {
@@ -299,376 +312,33 @@ h1 {
 }
 
 .saveDate {
-    font-size: medium;
+    font-family: "Courier New", Courier, monospace;
     color: darkred;
-    font-family: Courier new;
-    display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers children vertically */
-    align-items: center; /* Centers children horizontally */
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    border-color: darkred;
-    border-width: 2px;
-    border-style: hidden;
     margin: 0 auto;
-    
-    width: 90%;          /* Changed from 400px */
+    width: 90%;
     max-width: 400px;
-    /*
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color:floralwhite;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    */
-}
-
-.saveDate h3,
-.saveDate h2,
-.saveDate p {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .savedateimg {
-    /*width: 89vh;*/
-    font-size: medium;
-    color: darkred;
-    font-family: Courier new;
     display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers children vertically */
-    align-items: center; /* Centers children horizontally */
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    border-color: darkred;
-    border-width: 2px;
-    border-style: hidden;
-
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    
     margin: 0 auto;
     width: 100%;
     max-width: 430px; 
     height: auto;
-}
-
-.maps {
-    border:0;
-    width: 390px;
-    /*max-width: 450px; */
-    height: 300px;
-}
-
-@media (max-width: 430px) {
-    .savedateimg {
-        width: 100%;
-        max-width: 400px;
-    }
-    .maps {
-        width:100%;
-        max-width:400px;
-    }
-}
-
-.announce p {
-    margin: 0;
-}
-/* Base style for the content that appears after the intro */
-.page-content {
-    /* Hides the content initially with a smooth fade in */
-    opacity: 0;
-    transition: opacity 1s ease-in 0.8s; /* Delay the fade-in until clouds start moving */
-    position: relative; /* Keep it in the normal flow */
+    padding-top: 20px;
     
-    width: 100%;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* This will center your content inside the page */
-    text-align: center;
-}
-
-/* Full-screen container for the static image/placeholder */
-/* Full-screen container for the static image/placeholder */
-.clouds-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    background-color: #ffe;
-
-    transition: opacity 0.5s ease-out;
-}
-
-.initial {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: opacity 0.5s ease-out;
-}
-
-/* Image sizing inside the screen */
-.clouds-screen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /*transition: opacity 1s ease-out 2s;*/
-}
-
-.clouds-screen.fading {
-    opacity: 0;
-    /* After the fade-out is complete, disable pointer events */
-    pointer-events: none;
-}
-
-/* Initial centered image container (UNCHANGED) */
-.initial {
-    z-index: 1001; /* On top of the cloud screen */
-    cursor: pointer;
-    transition: opacity 0.3s ease-out 0.5s;
-    background: transparent;
-
-    width: 30vw;
-    height: 30vh;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Initial image sizing (UNCHANGED) */
-.initial img {
-    width: 200px;
-    height: 200px;
-}
-
-/* Animation Classes */
-
-/* 1. Cloud Screen disappears */
-/*.clouds-screen.hidden {
-    opacity: 0;
-    pointer-events: none;
-}*/
-
-/* 2. Initial disappears */
-.initial.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* 3. Main content appears */
-.page-content {
-    opacity: 0;
-    transition: opacity 0.8s ease-in;
-    position: relative;
-}
-
-.page-content.loaded {
-    opacity: 1;
-}
-
-/* ... keep all your other existing non-intro styles ... */
-
-/* --- EXISTING STYLES (Cleaned Up) --- */
-
-.container,
-.container2 {
-    width: 100%; 
-    /*box-sizing: border-box;  Ensures padding doesn't push it off-screen */
-    margin: 0 auto;
-}
-
-@media ( max-width:430px ) {
-    .container2{
-        max-width:420px;
-    }
-}
-
-/* Update your mobile media query */
-@media (max-width: 430px) {
-    /*
-    .page-content {
-        padding: 0 10px;  Gives a little breathing room on the edges 
-    }
-    */
-    
-    .container {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-/*THE TOGGLE SWITCH*/
-/* The switch - the box around the slider */
-#translator {
-    margin-top: 5px;
-    margin-right: 5px;
-    float: right;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 70px;
-    height: 34px;
-    margin: 0;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-/* ------------------------------------------------------------------- */
-/* The slider (The background track) */
-.slider {
-    /* ... existing properties ... */
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #e974a4;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    /* Add text color and alignment for the labels */
-    color: white;
-    text-align: left;
-    line-height: 34px; /* Matches height for vertical centering */
-    text-indent: 8px;
-    font-family: helvetica;
-    font-size: 14px;
-}
-
-/* The thumb (Using :after to leave :before for the labels if needed, or stick to :before) */
-/* RENAME the thumb to :after for clarity and consistency with labels */
-.slider:after {
-    position: absolute;
-    content: ""; /* Thumb content is empty */
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-/* ------------------------------------------------------------------- */
-/* NEW: Add the ON/OFF text using the main content of the slider */
-.slider:before {
-    content: "ENG"; /* Default text */
-    position: absolute;
-    right: 8px; /* Positioning "OFF" to the right */
-    left: auto;
-    opacity: 1;
-    transition: opacity 0.4s;
-}
-
-/* The "ON" text appears when checked, "OFF" disappears */
-input:checked + .slider:before {
-    content: "粵語";
-    right: auto;
-    left: -1px; /* Positioning "ON" to the left */
-    opacity: 1;
-}
-
-/* ------------------------------------------------------------------- */
-/* Update the checked state transitions */
-input:checked + .slider {
-    background-color: #2196f3;
-}
-
-/* Update the thumb position (Since we renamed the thumb to :after) */
-input:checked + .slider:after {
-    -webkit-transform: translateX(35px);
-    -ms-transform: translateX(35px);
-    transform: translateX(35px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* Ensure the parent #translator can contain the absolutely positioned link */
-#translator {
-    /* This overrides the 'center' alignment from the parent for this specific item */
-    align-self: flex-end; 
-    
-    margin-top: 9px;      /* Spacing from the very top */
-    margin-right: 20px;    /* Spacing from the right edge */
-    
-    position: relative;    /* So the absolute link stays inside this box */
-    width: 70px; 
-    height: 34px;
-    
-    /* Remove 'float: right' as it interferes with Flexbox */
-}
-
-h2.hk_h2 {
-    font-family: "HelloFont", sans-serif;
-}
-
-/* NEW: Make the anchor tag cover the entire switch area */
-.language-link {
-    /* Position over the switch */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Sits on top of the slider thumb */
-    cursor: pointer;
-}
-
-html {
-    /* Enables smooth scrolling animation when jumping to anchors */
-    scroll-behavior: smooth;
-}
-
-/* 1. Make the wrapper the anchor point */
-.rsvp-wrapper {
-    position: relative;
-    width: 100%;          /* NEW: Ensures it spans nicely */
-    max-width: 500px;     /* CHANGED: Replaced 60vh with a pixel maximum */
-    margin: 30px auto 0; /* Centers the whole unit on the screen */
-}
-
-/* 2. Position the cat absolutely */
-.corner-cat {
-    position: absolute;
-    top: -90px; /* Adjust this to move it higher/lower */
-    right: -20px; /* Aligns it to the right of the wrapper */
-    z-index: -1; /* Puts the cat behind the form */
-    width: 120px; /* Adjust size as needed */
-}
-
-.bottom-cats {
-    text-align: center;
-    width: 100%;
+    /* Typography matches your theme */
+    color: darkred;
+    font-family: "Courier New", Courier, monospace;
+    font-size: medium;
+    white-space: nowrap;
 }
 
 .cat-flower, .cat-bee {
@@ -676,200 +346,148 @@ html {
     display:inline-block;
     width:113px;
     margin-top: -25px;
+    transform: translateX(125%);
+}
+
+.maps {
+    width: 400px;
+    height: 300px;
 }
 
 /* ======================================================= */
-/* 1. CONTAINER AND FORM STYLING */
+/* 7. RSVP FORM                                            */
 /* ======================================================= */
-
 
 .container2 {
     position: relative;
     z-index: 1;
-    /* Center the form on the page and provide spacing */
     margin: 30px auto;
     padding: 20px;
-
-    /* Using a fixed width of 60vh might be too wide on large screens. 
-       Let's use a max-width for responsiveness. 
-       400px is a good size for forms. */
     width: 90%;
     max-width: 450px;
-
-    /* Elegant border and slight shadow */
     border: 1px solid #ddd;
     border-radius: 10px;
+    background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    background-color: #fff; /* White background for the form area */
 }
 
-/* ======================================================= */
-/* 2. INPUT AND FIELD STYLING */
-/* ======================================================= */
-
-/* Styles for all paragraph labels */
 .container2 p {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 0.95em;
-    color: #333;
-    margin-bottom: 3px;
     font-weight: bold;
+    margin-bottom: 3px;
+    text-align: left;
 }
 
-/* The inline blocks for name/phone to sit side-by-side */
 .inline-div-block {
-    /* Use a layout to ensure two fields fit side-by-side */
-    display: inline-block;
-    vertical-align: top; /* Align blocks to the top */
-    margin-right: 2%; /* Small space between the two blocks */
-    width: 100%; /* Allows two blocks to fit side by side  change from 48% to 100%*/
+    display: block; /* Standardizes stacking for inputs */
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: "Courier New", Courier, monospace;
 }
 
-/* Ensure the full width input (like for allergies) is 100% */
-input[name="allergy"]{
-    width: 100% !important; /* Override inline width */
+.inline-div-block p, input {
+    font-family: "Courier New", Courier, monospace;
+    color: black;
+    font-weight: 700;
 }
-
-/* General styling for all text inputs and select boxes */
 .container2 input[type="text"],
 .container2 select {
-    width: 100%; /* Make them fill their parent container (.inline-div-block or form) */
+    width: 100%;
     padding: 10px 12px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    color: #555;
+    box-sizing: border-box;
 }
-
-/* Focus state for inputs */
-.container2 input[type="text"]:focus,
-.container2 select:focus {
-    border-color: #bd4e55;
-    box-shadow: 0 0 5px rgba(189, 78, 85, 0.5);
-    outline: none;
-}
-
-form .inline-div-block, label {
-    text-align-last: left;
-}
-
-/* ======================================================= */
-/* 3. RADIO BUTTONS AND LABELS */
-/* ======================================================= */
-
-/* Custom styling for radio button labels */
-.container2 label {
-    font-family: "Courier New", Courier, monospace;
-    color: #333;
-    cursor: pointer;
-    margin-right: 20px;
-    padding-left: 5px;
-    font-size: 1em;
-    font-weight: normal; /* Less bold than the paragraph labels */
-}
-
-/* Note: Removed the &nbsp; spacers from HTML for cleaner layout using CSS */
-
-/* ======================================================= */
-/* 4. SUBMIT BUTTON */
-/* ======================================================= */
 
 #submit {
-    /* Full width button */
     width: 100%;
-
-    /* Styling */
     background-color: #bd4e55;
     color: white;
-    padding: 12px 20px;
-    margin-top: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     font-family: "Georgia", serif;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
 }
 
-#submit:hover {
-    background-color: #a03c43; /* Darker shade on hover */
+.rsvp-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.corner-cat {
+    position: absolute;
+    top: -90px;
+    right: -20px;
+    z-index: -1;
+    width: 120px;
+}
+
+#guest-name-section {
+    display: none;
 }
 
 /* ======================================================= */
-/* 5. RESPONSIVENESS (For smaller screens) */
+/* 8. MOBILE RESPONSIVENESS (< 430PX)                      */
 /* ======================================================= */
 
 @media (max-width: 430px) {
-    /* Force name and phone to stack vertically on small screens */
-    .inline-div-block {
-        width: 100%;
-        margin-right: 0;
-        display: block;
-    }
-}
-
-@media (max-width: 430px) {
-    .navigation ul {
-        display: flex;             /* Enables Flexbox */
-        justify-content: center;   /* Centers the items horizontally */
-        align-items: center;       /* Centers the items vertically */
-        padding: 0;
-        margin: 0;
-        width: 100%;               /* Ensures it takes the full width available */
-    }
+    h1 { font-size: 3rem; }
     
-    .navigation ul li {
-        margin: 0 2px; /* Reduces the gap between menu items */
-        font-size: 14px; /* Slightly shrinks the text */
-    }
     .navbar {
-        position: fixed;
-        text-align: center;
-        
-        /* FIX: Define the starting position */
-        top: 50px; 
-        left: -3px; 
-        
+        position: -webkit-sticky;
+        top: 0;
         width: 100%;
-        /* FIX: Ensure padding doesn't make it wider than the screen */
-        box-sizing: border-box; 
-        
         background-color: #ffe;
-        padding: 0px 6px;
-        z-index: 1000;
-        
-        /* Add this transition for the smooth movement */
-        transition: top 0.3s ease-in-out;
+        padding: 5px 0;
     }
 
-    /* This class will be added via JavaScript */
-    .navbar.scrolled {
-        top: 9px; 
+    .photo-stack {
+        aspect-ratio: 1 / 1.4;
+    }
+
+    .gallery-img { width: 75%; }
+
+    .ph1 { top: 2%; left: 2%; }
+    .ph2 { top: 24%; left: 32%; }
+    .ph3 { 
+        top: 52%; 
+        left: 45%; 
+        transform: translateX(-50%); 
     }
     
-    .rsvp-wrapper {
-        position: relative;
-        width: 100%;          /* NEW: Ensures it spans nicely */
-        max-width: 375px;     
-        margin: 30px auto 0; /* Centers the whole unit on the screen */
+    .ph3:hover {
+        transform: translateX(-50%) scale(1.05);
+        z-index: 10;
+    }
+
+    .maps {
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
     }
     
-    .cats {
-        margin-top: 6px;
+    .cat-flower, .cat-bee {
+        align-content: center;
+        display:inline-block;
+        width:113px;
+        margin-top: -25px;
+        transform: translateX(75%);
     }
-    
-    /*
-    #translator {
-        margin-top: 5px;
-        margin-right: 85px;  Increase this value (was 5px) to move it left 
-        float: right;
-        position: relative;
-        width: 70px; 
-        height: 34px;
+}
+
+/* Interactive States */
+@media (hover: hover) {
+    .gallery-img:hover, .hover-cat:hover { transform: scale(1.05); z-index: 10; }
+    .ph3:hover { transform: translateX(-50%) scale(1.05); }
+}
+
+@media (hover: none) {
+    .gallery-img:active {
+        z-index: 10; /* Bring whichever photo you hover over to the very front */
+        transform: scale(1.05);
     }
-    */
 }
